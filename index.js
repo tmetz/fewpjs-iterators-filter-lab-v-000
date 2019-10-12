@@ -5,3 +5,17 @@ function findMatching(drivers, driverString) {
   });
   return matched;
 }
+
+function fuzzyMatch(drivers, driverString) {
+  let matched = drivers.filter(n => {
+    return n.match(new RegExp(driverString, 'i'));
+  });
+  return matched;
+}
+
+function matchName(drivers, driverString) {
+  let matched = drivers.filter(n => {
+    return n.name.match(new RegExp(driverString, 'i'));
+  });
+  return matched;
+}
